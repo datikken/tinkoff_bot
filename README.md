@@ -1,12 +1,3 @@
-### 🥇 The winner in [Tinkoff invest robot contest](https://github.com/Tinkoff/invest-robot-contest) 01.06.2022
-
-# Tinkoff Trading Bot
-
-This is a bot for trading on Tinkoff broker.
-It uses [Tinkoff investments API](https://github.com/Tinkoff/investAPI)
-
-App name is `qwertyo1`
-
 ## How to run
 To run the bot, you need to have a Tinkoff account.
 - Generate token for your account at [the settings](https://www.tinkoff.ru/invest/settings/)
