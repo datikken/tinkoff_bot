@@ -1,16 +1,8 @@
 from grpc import StatusCode
-from pydantic import BaseSettings
 from tinkoff.invest import Client, RequestError, InstrumentIdType
 from pprint import pprint
-
-class Settings(BaseSettings):
-    token: str
-
-    class Config:
-        env_file = ".env"
-
-
-settings = Settings()
+from get_accounts import get_sandbox_accounts
+from setting import settings
 
 
 def get_instrument_by(figi):

@@ -1,16 +1,6 @@
 from grpc import StatusCode
-from pydantic import BaseSettings
 from tinkoff.invest import Client, RequestError, AccountType
-
-
-class Settings(BaseSettings):
-    token: str
-
-    class Config:
-        env_file = ".env"
-
-
-settings = Settings()
+from setting import settings
 
 
 def get_sandbox_accounts():
@@ -33,4 +23,5 @@ def get_accounts():
 if __name__ == "__main__":
     accounts = get_accounts()
     for account in accounts:
-        print(f"id: {account.id}, name: {account.name}, type: {str(AccountType(account.type))}")
+        print(
+            f"id: {account.id}, name: {account.name}, type: {str(AccountType(account.type))}")
