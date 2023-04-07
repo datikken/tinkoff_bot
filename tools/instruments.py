@@ -14,6 +14,21 @@ def get_instrument_by(figi):
                 return get_sandbox_accounts()
 
 
+def get_shares():
+    with Client(settings.token) as client:
+            try:
+                return client.instruments.shares()
+            except RequestError as e:
+                if e.code == StatusCode.UNAUTHENTICATED:
+                    return get_sandbox_accounts()
+
+
+
 if __name__ == "__main__":
-  inst = get_instrument_by('BBG000QDVR53')
-  pprint(inst)
+#   inst = get_instrument_by('BBG000QDVR53')
+
+# Shares
+    shares = get_shares()
+    for share in shares.instruments:
+        print('')
+        pprint(share)
