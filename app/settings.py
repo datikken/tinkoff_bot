@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     token: str
     account_id: Optional[str] = None
     bot_token: Optional[str] = None
+    bot_channel: Optional[str] = None 
     sandbox: bool = True
 
     class Config:
