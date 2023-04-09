@@ -1,6 +1,8 @@
 from telebot.async_telebot import AsyncTeleBot
+from app.settings import settings
 
-bot = AsyncTeleBot('5255444441:AAFX2xVwHC5yG4TB9fGEN7bn2H6Fi8YDoO8')
+
+bot = AsyncTeleBot(settings.bot_token)
 
 
 async def send_to_channel(msg = ''):
