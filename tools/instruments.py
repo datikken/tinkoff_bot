@@ -1,7 +1,7 @@
 from grpc import StatusCode
 from tinkoff.invest import Client, RequestError, InstrumentIdType
 from pprint import pprint
-from get_accounts import get_sandbox_accounts
+from accounts import get_sandbox_accounts
 from setting import settings
 
 
@@ -29,6 +29,9 @@ if __name__ == "__main__":
 
 # Shares
     shares = get_shares()
-    for share in shares.instruments:
-        print('')
-        pprint(share)
+    print(
+        len(shares.instruments)
+    )
+    # for share in shares.instruments:
+    #     print('')
+    #     pprint(share)
