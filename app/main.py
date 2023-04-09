@@ -4,6 +4,7 @@ import logging
 from app.client import client
 from app.instruments_config.parser import instruments_config
 from app.strategies.strategy_fabric import resolve_strategy
+from tgbot.tgbot import send_to_channel
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -13,6 +14,7 @@ logging.basicConfig(
 
 async def init():
     await client.ainit()
+    await send_to_channel('Trading day begun.')
     for instrument_config in instruments_config.instruments:
         strategy = resolve_strategy(
             strategy_name=instrument_config.strategy.name,
