@@ -9,7 +9,8 @@
 # 2. There is no potential to trade instrument when corridor top is reached 
 # 3. Instrument volatility beta
 # 4. Create next app or process to find an instrument which is in it's own corridor bottom
-
+# 5. Instrument switch should be implemented, take in memory: strategy.start()
 docker build -t tinek .
 
 docker run -d -it --rm --name running-tinek tinek
+
