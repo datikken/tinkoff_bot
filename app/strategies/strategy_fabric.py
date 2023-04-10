@@ -1,12 +1,14 @@
 from typing import Dict
 
 from app.strategies.interval.IntervalStrategy import IntervalStrategy
+from app.strategies.interval.IntervalStrategySearch import IntervalStrategySearch
 from app.strategies.base import BaseStrategy
 from app.strategies.errors import UnsupportedStrategyError
 from app.strategies.models import StrategyName
 
 strategies: Dict[StrategyName, BaseStrategy.__class__] = {
     StrategyName.INTERVAL: IntervalStrategy,
+    StrategyName.INTERVAL_SEARCH: IntervalStrategySearch
 }
 
 

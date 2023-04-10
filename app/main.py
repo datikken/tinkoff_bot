@@ -11,7 +11,6 @@ logging.basicConfig(
     format="[%(levelname)-5s] %(asctime)-19s %(name)s: %(message)s",
 )
 
-
 async def init():
     await client.ainit()
     await send_to_channel('Trading day begun.')

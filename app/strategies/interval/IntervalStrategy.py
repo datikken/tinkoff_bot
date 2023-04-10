@@ -12,7 +12,6 @@ from tinkoff.invest.grpc.orders_pb2 import (
     ORDER_TYPE_MARKET,
 )
 from tinkoff.invest.utils import now
-
 from app.client import client
 from app.settings import settings
 from app.stats.handler import StatsHandler
@@ -95,7 +94,7 @@ class IntervalStrategy(BaseStrategy):
             return 0
         return int(quotation_to_float(position.quantity))
 
-    async def handle_corridor_crossing_top(self, last_price: float) -> None:
+    # async def handle_corridor_crossing_top(self, last_price: float) -> None:
         """
         This method is called when last price is higher than top corridor border.
         Check how many shares we already have and sell them.
@@ -125,7 +124,7 @@ class IntervalStrategy(BaseStrategy):
                 )
             )
 
-    async def handle_corridor_crossing_bottom(self, last_price: float) -> None:
+    # async def handle_corridor_crossing_bottom(self, last_price: float) -> None:
         """
         This method is called when last price is lower than bottom corridor border.
         Check how many shares we already have and buy more until the quantity_limit is reached.
@@ -231,13 +230,13 @@ class IntervalStrategy(BaseStrategy):
                         f"Last price {last_price} is higher than top corridor border "
                         f"{self.corridor.top}. figi={self.figi}"
                     )
-                    await self.handle_corridor_crossing_top(last_price=last_price)
+                    # await self.handle_corridor_crossing_top(last_price=last_price)
                 elif last_price <= self.corridor.bottom:
                     logger.debug(
                         f"Last price {last_price} is lower than bottom corridor border "
                         f"{self.corridor.bottom}. figi={self.figi}"
                     )
-                    await self.handle_corridor_crossing_bottom(last_price=last_price)
+                    # await self.handle_corridor_crossing_bottom(last_price=last_price)
             except AioRequestError as are:
                 logger.error(f"Client error {are}")
 
