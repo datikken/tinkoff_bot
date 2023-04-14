@@ -94,7 +94,7 @@ class IntervalStrategy(BaseStrategy):
             return 0
         return int(quotation_to_float(position.quantity))
 
-    # async def handle_corridor_crossing_top(self, last_price: float) -> None:
+    async def handle_corridor_crossing_top(self, last_price: float) -> None:
         """
         This method is called when last price is higher than top corridor border.
         Check how many shares we already have and sell them.
@@ -124,7 +124,7 @@ class IntervalStrategy(BaseStrategy):
                 )
             )
 
-    # async def handle_corridor_crossing_bottom(self, last_price: float) -> None:
+    async def handle_corridor_crossing_bottom(self, last_price: float) -> None:
         """
         This method is called when last price is lower than bottom corridor border.
         Check how many shares we already have and buy more until the quantity_limit is reached.
