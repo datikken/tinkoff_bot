@@ -3,7 +3,8 @@ import asyncio
 from tinkoff.invest import OrderExecutionReportStatus, AioRequestError
 
 from app.client import TinkoffClient
-from app.stats.sqlite_client import StatsSQLiteClient
+from app.stats.sql_client import StatsSQLClient
+from app.stats.sql_client import S
 from app.strategies.models import StrategyName
 from app.utils.quotation import quotation_to_float
 
@@ -17,7 +18,7 @@ FINAL_ORDER_STATUSES = [
 class StatsHandler:
     def __init__(self, strategy: StrategyName, broker_client: TinkoffClient):
         self.strategy = strategy
-        self.db = StatsSQLiteClient(db_name="stats.db")
+        self.db = StatsSQLClient()
         self.broker_client = broker_client
 
     async def handle_new_order(self, account_id: str, order_id: str) -> None:
