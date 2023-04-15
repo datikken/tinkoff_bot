@@ -29,9 +29,11 @@ if __name__ == "__main__":
 
 # Shares
     shares = get_shares()
-    print(
-        len(shares.instruments)
-    )
-    # for share in shares.instruments:
-    #     print('')
-    #     pprint(share)
+    # print(
+    #     len(shares.instruments)
+    # )
+    for share in shares.instruments:
+        if 'ozon' in share.name.lower():
+            pprint(share.name)
+            pprint(share.figi)
+            print('')

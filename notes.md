@@ -1,3 +1,4 @@
+# ACHTUNG! HALT! CAN BLOW ALL YOUR MONEY!
 
 # id: 2017310133, name: Брокерский счёт, type: AccountType.ACCOUNT_TYPE_TINKOFF
 # id: 2031542356, name: Инвесткопилка, type: AccountType.ACCOUNT_TYPE_INVEST_BOX
@@ -10,7 +11,9 @@
 # 3. Instrument volatility beta
 # 4. Create next app or process to find an instrument which is in it's own corridor bottom
 # 5. Instrument switch should be implemented, take in memory: strategy.start()
+
 docker build -t tinek .
 
 docker run -d -it --rm --name running-tinek tinek
 
+https://pypi.org/project/TA-Lib/

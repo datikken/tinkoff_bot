@@ -131,6 +131,10 @@ class IntervalStrategy(BaseStrategy):
 
         :param last_price: last price of the instrument
         """
+
+        # TODO: do not buy if corridor crossing bottom and continues to go down mfk
+        # TODO: avoid buy loose buy loose loop somehow
+
         position_quantity = await self.get_position_quantity()
         if position_quantity < self.config.quantity_limit:
             quantity_to_buy = self.config.quantity_limit - position_quantity
