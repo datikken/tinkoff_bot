@@ -1,4 +1,4 @@
-from app.sql.models import Order
+from app.sql.database import Order
 from app.sql.database import db
 
 
