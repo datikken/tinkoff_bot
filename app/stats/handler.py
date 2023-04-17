@@ -4,7 +4,6 @@ from tinkoff.invest import OrderExecutionReportStatus, AioRequestError
 
 from app.client import TinkoffClient
 from app.stats.sql_client import StatsSQLClient
-from app.stats.sql_client import S
 from app.strategies.models import StrategyName
 from app.utils.quotation import quotation_to_float
 

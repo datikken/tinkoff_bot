@@ -8,4 +8,4 @@ display_stats:
 	PYTHONPATH=./ python tools/stats.py
 
 get_accounts:
-	PYTHONPATH=./ python tools/get_accounts.py
+	PYTHONPATH=./ python tools/accounts.py
