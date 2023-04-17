@@ -1,7 +1,10 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime
 from sqlalchemy.orm import declarative_base
+from datetime import datetime
 
 Base = declarative_base()
+
+now = datetime.datetime.utcnow
 
 class Order(Base):
   __tablename__ = 'orders'
@@ -26,5 +29,5 @@ class Corridor(Base):
   current = Column(Float)
   days_considered = Column(Integer)
   figi = Column(String(256))
-  created_at = Column(DateTime)
-  updated_at = Column(DateTime)
+  created_at = Column(DateTime, default=now)
+  updated_at = Column(DateTime, default=now)
