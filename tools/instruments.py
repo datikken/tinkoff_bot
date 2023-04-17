@@ -16,24 +16,22 @@ def get_instrument_by(figi):
 
 def get_shares():
     with Client(settings.token) as client:
-            try:
-                return client.instruments.shares()
-            except RequestError as e:
-                if e.code == StatusCode.UNAUTHENTICATED:
-                    return get_sandbox_accounts()
+        try:
+            return client.instruments.shares()
+        except RequestError as e:
+            if e.code == StatusCode.UNAUTHENTICATED:
+                return get_sandbox_accounts()
 
+
+def get_share_by_figi(figi):
+    shares = get_shares()
+    for share in shares.instruments:
+        if figi in share.figi:
+            return share
+        else:
+            return None
 
 
 if __name__ == "__main__":
-#   inst = get_instrument_by('BBG000QDVR53')
-
-# Shares
-    shares = get_shares()
-    # print(
-    #     len(shares.instruments)
-    # )
-    for share in shares.instruments:
-        if 'ozon' in share.name.lower():
-            pprint(share.name)
-            pprint(share.figi)
-            print('')
+    share = get_share_by_figi('BBG000QDVR53')
+    pprint(share)

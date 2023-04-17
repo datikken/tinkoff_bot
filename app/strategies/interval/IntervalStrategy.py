@@ -77,6 +77,8 @@ class IntervalStrategy(BaseStrategy):
             values.append(quotation_to_float(candle.close))
         lower_percentile = (1 - self.config.interval_size) / 2 * 100
         corridor = list(np.percentile(values, [lower_percentile, 100 - lower_percentile]))
+        
+        # TODO: add mysql corridor
         logger.info(
             f"Corridor: {corridor}. days_back_to_consider={self.config.days_back_to_consider} "
             f"figi={self.figi}"
@@ -143,6 +145,8 @@ class IntervalStrategy(BaseStrategy):
             )
 
             try:
+                # TODO: before post order try to figure out Ta-Lib:AD  Chaikin A/D Line
+                # and ADOSC Chaikin A/D Oscillator
                 posted_order = await client.post_order(
                     order_id=str(uuid4()),
                     figi=self.figi,
