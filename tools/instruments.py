@@ -28,10 +28,8 @@ def get_share_by_figi(figi):
     for share in shares.instruments:
         if figi in share.figi:
             return share
-        else:
-            return None
 
 
 if __name__ == "__main__":
-    share = get_share_by_figi('BBG000QDVR53')
+    share = get_share_by_figi('BBG00Y91R9T3')
     pprint(share)

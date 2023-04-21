@@ -37,7 +37,7 @@ services:
 # Creates a named volume to persist our database data
 volumes:
   timescale_volume:
-
+  
 # Joins our external network
 networks:
   timescale_network:
