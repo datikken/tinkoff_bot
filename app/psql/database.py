@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from app.settings import settings
 from app.sql.models import Base
 
-SQLALCHEMY_DATABASE_URL = f"mysql://{settings.db_user}:{settings.db_pass}@127.0.0.1:3306/{settings.db_name}"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.db_user}:{settings.db_pass}@127.0.0.1:5432/{settings.db_name}"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL

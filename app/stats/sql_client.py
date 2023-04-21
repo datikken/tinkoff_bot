@@ -1,5 +1,5 @@
-from app.sql.models import Order
-from app.sql.database import db
+from app.psql.models import Order
+from app.psql.database import db
 
 
 class StatsSQLClient:

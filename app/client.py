@@ -1,12 +1,7 @@
-from datetime import datetime
 from typing import Optional, List
 
 from tinkoff.invest import (
     AsyncClient,
-    CandleInterval,
-    Quotation,
-    OrderDirection,
-    OrderType,
     PostOrderResponse,
     GetLastPricesResponse,
     OrderState,

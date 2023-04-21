@@ -1,13 +1,5 @@
 version: '3.1'
 services:
-  db:
-    image: mysql
-    restart: always
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: "${DB_PASS}"
-
   timescale:
     image: timescale/timescaledb:1.7.4-pg12
     volumes: 
