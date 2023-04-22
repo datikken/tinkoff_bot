@@ -15,7 +15,6 @@ services:
         target: /postgresql_custom.conf
         read_only: false
     env_file: .env
-    user: root
     environment: 
       POSTGRES_HOST: timescale
     command: ["-c", "config_file=/postgresql_custom.conf"]
