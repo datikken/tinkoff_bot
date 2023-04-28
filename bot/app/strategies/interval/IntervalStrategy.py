@@ -20,6 +20,8 @@ from app.strategies.base import BaseStrategy
 from app.strategies.models import StrategyName
 from app.utils.portfolio import get_position, get_order
 from app.utils.quotation import quotation_to_float
+from app.indicators.rsi import get_rsi_index
+from pprint import pprint
 
 logger = logging.getLogger(__name__)
 
@@ -63,6 +65,12 @@ class IntervalStrategy(BaseStrategy):
         ):
             candles.append(candle)
         logger.debug(f"Found {len(candles)} candles. figi={self.figi}")
+
+        rsi = get_rsi_index(candles)
+        curr_rsi = rsi[-1]
+        logger.debug(
+            f"RSI: {curr_rsi}"
+        )
         return candles
 
     async def update_corridor(self) -> None:

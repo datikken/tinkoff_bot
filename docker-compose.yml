@@ -11,7 +11,7 @@ services:
         read_only: false
       # Custom postgresql.conf file will be mounted (see command: as well)
       - type: bind
-        source: ./postgresql_custom.conf
+        source: ./docker/postgresql_custom.conf
         target: /postgresql_custom.conf
         read_only: false
     env_file: .env
