@@ -8,7 +8,8 @@ def get_rsi_index(candles):
     for candle in candles:
         close.append(float(candle.close.units))
 
-    return RSI(
+    rsi = RSI(
         np.array(close),
         timeperiod=14
     )
+    return rsi[-1]

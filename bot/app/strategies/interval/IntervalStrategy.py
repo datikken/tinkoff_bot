@@ -64,13 +64,9 @@ class IntervalStrategy(BaseStrategy):
             interval=CandleInterval.CANDLE_INTERVAL_1_MIN,
         ):
             candles.append(candle)
+            
         logger.debug(f"Found {len(candles)} candles. figi={self.figi}")
-
-        rsi = get_rsi_index(candles)
-        curr_rsi = rsi[-1]
-        logger.debug(
-            f"RSI: {curr_rsi}"
-        )
+        logger.debug(f"RSI: {get_rsi_index(candles)}")
         return candles
 
     async def update_corridor(self) -> None:
